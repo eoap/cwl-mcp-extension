@@ -2,6 +2,8 @@
 
 `cwl-mcp-extension` defines a small CWL extension for attaching MCP tool metadata to a CWL `Process` without duplicating standard CWL execution semantics.
 
+**This repository is a work in progress. Contributions, feedback, and discussion are welcome.**
+
 The canonical schema entrypoint is [schema/mcp-extension.yml](schema/mcp-extension.yml). It aggregates the two records currently defined by the extension:
 
 - `mcp:Tool`
