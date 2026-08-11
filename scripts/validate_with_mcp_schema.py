@@ -23,6 +23,7 @@ ALLOWED_MCP_TOOL_FIELDS = {
 }
 
 ALLOWED_ANNOTATION_FIELDS = {
+    "title": (str, type(None)),
     "readOnlyHint": (bool, type(None)),
     "destructiveHint": (bool, type(None)),
     "idempotentHint": (bool, type(None)),
@@ -122,7 +123,10 @@ def validate_annotations(value: Any, prefix: str) -> list[str]:
             errors.append(f"{prefix}.annotations contains unknown field '{key}'")
     for key, allowed_types in ALLOWED_ANNOTATION_FIELDS.items():
         if key in value and not isinstance(value[key], allowed_types):
-            errors.append(f"{prefix}.annotations.{key} must be boolean or null")
+            if key == "title":
+                errors.append(f"{prefix}.annotations.title must be string or null")
+            else:
+                errors.append(f"{prefix}.annotations.{key} must be boolean or null")
     return errors
 
 

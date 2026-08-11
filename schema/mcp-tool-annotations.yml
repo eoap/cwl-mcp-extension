@@ -8,6 +8,11 @@ doc: >
   Optional MCP annotation hints carried in CWL authoring metadata.
   These are descriptive hints only and do not express authorization policy.
 fields:
+  - name: title
+    type:
+      - "null"
+      - string
+    doc: Optional human-readable display title hint for the derived MCP tool.
   - name: readOnlyHint
     type:
       - "null"

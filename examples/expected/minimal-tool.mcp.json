@@ -2,6 +2,20 @@
   "name": "echo_region",
   "title": "Echo region identifier",
   "description": "Returns the region identifier provided by the caller.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "region": {
+        "type": "string",
+        "title": "Region",
+        "description": "Region identifier to echo."
+      }
+    },
+    "required": [
+      "region"
+    ],
+    "additionalProperties": false
+  },
   "annotations": {
     "readOnlyHint": true,
     "destructiveHint": false,

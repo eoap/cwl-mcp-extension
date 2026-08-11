@@ -9,6 +9,12 @@ The canonical schema entrypoint is [schema/mcp-extension.yml](schema/mcp-extensi
 - `mcp:Tool`
 - `mcp:ToolAnnotations`
 
+This extension targets the MCP Tool model described in the official Model Context Protocol specification:
+
+- MCP specification (2026-07-28): <https://modelcontextprotocol.io/specification/2026-07-28>
+- MCP Tools section: <https://modelcontextprotocol.io/specification/2026-07-28/server/tools>
+- Background on tool annotations: <https://blog.modelcontextprotocol.io/posts/2026-03-16-tool-annotations/>
+
 ## Goals
 
 - Keep standard CWL authoritative for execution, inputs, outputs, and workflow structure.
@@ -70,6 +76,9 @@ Use the repository validation helper to run `cwltool` validation and check the
 
 The GitHub Actions workflow at `.github/workflows/validate-examples.yml` runs the
 same validation in CI for the files under `examples/`.
+
+The same workflow also validates `examples/expected/*.json` against the official
+MCP `Tool` TypeScript schema for the 2026-07-28 specification revision.
 
 ## Scope
 

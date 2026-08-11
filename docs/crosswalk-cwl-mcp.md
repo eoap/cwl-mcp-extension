@@ -13,10 +13,12 @@
 | `mcp:Tool.useWhen` | usage guidance | composed into `description` or metadata |
 | `mcp:Tool.doNotUseWhen` | avoidance guidance | composed into `description` or metadata |
 | `mcp:Tool.aliases` | discovery metadata | `_meta` or generator-only data |
+| `mcp:Tool.annotations.title` | display fallback hint | `annotations.title` |
 | `mcp:Tool.annotations.*` | direct hint mapping | `annotations.*` |
 
 ## Notes
 
 - The extension is additive, not substitutive.
 - CWL remains the source of truth for input/output typing.
+- MCP display precedence is `title`, then `annotations.title`, then `name`.
 - Generators may keep richer provenance metadata than is emitted into the MCP Tool object.

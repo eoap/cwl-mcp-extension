@@ -2,6 +2,40 @@
   "name": "buffer_geometry",
   "title": "Buffer",
   "description": "Create a buffered geometry from an input GeoJSON point or polygon. Use this workflow when an LLM needs to transform a point into an area of interest or expand an existing polygon before calling another spatial tool. The buffer distance is expressed in the same coordinate units as the input geometry.\n\nUse when the user needs to expand a GeoJSON point or polygon into a buffered geometry for downstream spatial processing.\n\nDo not use when the user needs exact geometry preservation or expects the distance to be interpreted in meters for longitude and latitude coordinates.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "geometry": {
+        "type": "string",
+        "title": "Geometry To Buffer",
+        "description": "GeoJSON geometry to buffer. Use a point to create an area of interest around a location, or a polygon to expand an existing area."
+      },
+      "distance": {
+        "type": "number",
+        "title": "Buffer Distance",
+        "description": "Buffer distance expressed in the coordinate units of the input geometry."
+      }
+    },
+    "required": [
+      "geometry",
+      "distance"
+    ],
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "geometry_buffered": {
+        "type": "string",
+        "title": "Buffered AOI Geometry",
+        "description": "Buffered geometry that can be passed to downstream spatial workflows."
+      }
+    },
+    "required": [
+      "geometry_buffered"
+    ],
+    "additionalProperties": false
+  },
   "annotations": {
     "readOnlyHint": true,
     "destructiveHint": false,

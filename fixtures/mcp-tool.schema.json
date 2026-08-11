@@ -31,6 +31,9 @@
       "type": ["object", "null"],
       "additionalProperties": false,
       "properties": {
+        "title": {
+          "type": ["string", "null"]
+        },
         "readOnlyHint": {
           "type": ["boolean", "null"]
         },

@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  validate:
+  validate-cwl:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,3 +22,28 @@ jobs:
 
       - name: Validate example CWL files
         run: python scripts/validate_with_mcp_schema.py examples/*.cwl
+
+  validate-expected-mcp:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install TypeScript
+        run: npm install
+
+      - name: Download MCP 2026-07-28 schema.ts
+        run: |
+          mkdir -p vendor/modelcontextprotocol/2026-07-28
+          curl -fsSL \
+            https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/2026-07-28/schema.ts \
+            -o vendor/modelcontextprotocol/2026-07-28/schema.ts
+
+      - name: Validate expected MCP Tool JSON against official schema.ts
+        run: npx tsc -p tsconfig.expected.json
