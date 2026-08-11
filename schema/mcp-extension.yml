@@ -1,0 +1,12 @@
+# Canonical entrypoint for the CWL MCP extension schema.
+$namespaces:
+  mcp: https://w3id.org/terradue/mcp#
+
+doc: >
+  Aggregate schema entrypoint for the proposed CWL MCP extension.
+  Consumers should load this document to resolve all records defined
+  by the extension.
+
+$graph:
+  - $import: mcp-tool-annotations.yml
+  - $import: mcp-tool.yml

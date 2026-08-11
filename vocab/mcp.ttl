@@ -1,0 +1,16 @@
+@prefix mcp: <https://w3id.org/terradue/mcp#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+mcp: a owl:Ontology ;
+  rdfs:label "Terradue MCP vocabulary" ;
+  rdfs:comment "Vocabulary terms used by the proposed CWL MCP extension." .
+
+mcp:Tool a rdfs:Class ;
+  rdfs:label "Tool" ;
+  rdfs:comment "Agent-facing metadata for deriving an MCP Tool from a CWL Process." .
+
+mcp:ToolAnnotations a rdfs:Class ;
+  rdfs:label "ToolAnnotations" ;
+  rdfs:comment "Optional annotation hints copied into a derived MCP Tool." .

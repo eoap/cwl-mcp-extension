@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "mcp": "https://w3id.org/terradue/mcp#",
+    "Tool": "mcp:Tool",
+    "ToolAnnotations": "mcp:ToolAnnotations",
+    "name": "mcp:name",
+    "title": "mcp:title",
+    "description": "mcp:description",
+    "aliases": "mcp:aliases",
+    "useWhen": "mcp:useWhen",
+    "doNotUseWhen": "mcp:doNotUseWhen",
+    "annotations": "mcp:annotations",
+    "readOnlyHint": "mcp:readOnlyHint",
+    "destructiveHint": "mcp:destructiveHint",
+    "idempotentHint": "mcp:idempotentHint",
+    "openWorldHint": "mcp:openWorldHint"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "buffer_geometry",
+  "title": "Buffer",
+  "description": "Create a buffered geometry from an input GeoJSON point or polygon. Use this workflow when an LLM needs to transform a point into an area of interest or expand an existing polygon before calling another spatial tool. The buffer distance is expressed in the same coordinate units as the input geometry.\n\nUse when the user needs to expand a GeoJSON point or polygon into a buffered geometry for downstream spatial processing.\n\nDo not use when the user needs exact geometry preservation or expects the distance to be interpreted in meters for longitude and latitude coordinates.",
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  },
+  "_meta": {
+    "terradue.com/mcp-aliases": [
+      "buffer a geometry",
+      "expand an area of interest",
+      "grow a polygon around a point"
+    ]
+  }
+}

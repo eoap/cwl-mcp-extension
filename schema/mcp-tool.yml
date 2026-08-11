@@ -1,0 +1,53 @@
+# Schema Salad record for MCP tool metadata attached to a CWL process.
+$namespaces:
+  mcp: https://w3id.org/terradue/mcp#
+
+name: mcp:Tool
+type: record
+doc: >
+  Agent-facing metadata used to derive an MCP Tool from a CWL Process.
+  Standard CWL remains authoritative for execution, inputs, outputs,
+  defaults, workflow structure, and runtime requirements.
+fields:
+  - name: name
+    type:
+      - "null"
+      - string
+    doc: >
+      Explicit MCP tool name. When absent, tooling should derive a name
+      from the CWL process identifier.
+  - name: title
+    type:
+      - "null"
+      - string
+    doc: Optional MCP presentation title overriding the CWL label.
+  - name: description
+    type:
+      - "null"
+      - string
+    doc: >
+      Optional MCP-specific description. When absent, tooling should compose
+      a description from standard CWL documentation and usage guidance.
+  - name: aliases
+    type:
+      - "null"
+      - type: array
+        items: string
+    doc: >
+      Optional discovery aliases. These are authoring aids and are not a
+      standard top-level MCP Tool field.
+  - name: useWhen
+    type:
+      - "null"
+      - string
+    doc: Guidance for when an agent should consider this tool.
+  - name: doNotUseWhen
+    type:
+      - "null"
+      - string
+    doc: Guidance for when an agent should avoid this tool.
+  - name: annotations
+    type:
+      - "null"
+      - mcp:ToolAnnotations
+    doc: Optional MCP tool annotation hints copied into the derived MCP Tool.

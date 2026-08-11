@@ -1,0 +1,11 @@
+{
+  "name": "echo_region",
+  "title": "Echo region identifier",
+  "description": "Returns the region identifier provided by the caller.",
+  "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+  }
+}

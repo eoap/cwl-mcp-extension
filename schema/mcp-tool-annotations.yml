@@ -1,0 +1,30 @@
+# Schema Salad record for MCP tool annotations attached to a CWL process.
+$namespaces:
+  mcp: https://w3id.org/terradue/mcp#
+
+name: mcp:ToolAnnotations
+type: record
+doc: >
+  Optional MCP annotation hints carried in CWL authoring metadata.
+  These are descriptive hints only and do not express authorization policy.
+fields:
+  - name: readOnlyHint
+    type:
+      - "null"
+      - boolean
+    doc: True when the derived MCP tool is expected to be read-only.
+  - name: destructiveHint
+    type:
+      - "null"
+      - boolean
+    doc: True when the derived MCP tool may delete or mutate user data.
+  - name: idempotentHint
+    type:
+      - "null"
+      - boolean
+    doc: True when repeated invocations are expected to have the same effect.
+  - name: openWorldHint
+    type:
+      - "null"
+      - boolean
+    doc: True when external state may influence results at invocation time.

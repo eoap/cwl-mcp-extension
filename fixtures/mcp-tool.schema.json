@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/terradue/mcp/schema/mcp-tool.schema.json",
+  "title": "mcp:Tool",
+  "description": "JSON Schema fixture mirroring the proposed CWL MCP extension records.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": ["string", "null"]
+    },
+    "title": {
+      "type": ["string", "null"]
+    },
+    "description": {
+      "type": ["string", "null"]
+    },
+    "aliases": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "useWhen": {
+      "type": ["string", "null"]
+    },
+    "doNotUseWhen": {
+      "type": ["string", "null"]
+    },
+    "annotations": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "readOnlyHint": {
+          "type": ["boolean", "null"]
+        },
+        "destructiveHint": {
+          "type": ["boolean", "null"]
+        },
+        "idempotentHint": {
+          "type": ["boolean", "null"]
+        },
+        "openWorldHint": {
+          "type": ["boolean", "null"]
+        }
+      }
+    }
+  }
+}
