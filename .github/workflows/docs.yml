@@ -1,0 +1,25 @@
+name: docs
+on:
+  push:
+    branches:
+      - main
+    paths:
+      # Only rebuild website when docs have changed
+      - 'README.md'
+      - 'docs/**'
+      - 'mkdocs.yaml'
+      - .github/**
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs-material mkdocs-mermaid2-plugin mkdocs-build-plantuml-plugin
+      - run: mkdocs gh-deploy --force

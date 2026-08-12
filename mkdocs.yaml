@@ -1,0 +1,18 @@
+site_name: cwl-mcp-extension
+site_description: CWL extension for representing MCP tool metadata in Common Workflow Language documents
+site_url: https://eoap.github.io/cwl-mcp-extension/
+repo_url: https://github.com/eoap/cwl-mcp-extension
+repo_name: eoap/cwl-mcp-extension
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - Overview: specification.md
+  - Crosswalk: crosswalk-cwl-mcp.md
+  - Authoring Guide: authoring-guide.md
+  - Design Principles: design-principles.md
