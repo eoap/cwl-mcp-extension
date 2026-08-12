@@ -1,8 +1,8 @@
 # Schema Salad record for MCP tool annotations attached to a CWL process.
 $namespaces:
-  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
+  mcp: https://eoap.github.io/cwl-mcp-extension#
 
-name: cwlmcp:ToolAnnotations
+name: mcp:ToolAnnotations
 type: record
 doc: >
   Optional MCP annotation hints carried in CWL authoring metadata.

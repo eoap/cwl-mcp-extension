@@ -8,8 +8,8 @@ This repository is a work in progress. Contributions, feedback, and discussion a
 
 The extension introduces two records:
 
-- `cwlmcp:Tool`
-- `cwlmcp:ToolAnnotations`
+- `mcp:Tool`
+- `mcp:ToolAnnotations`
 
 These records are intended for use in CWL metadata, typically under `hints`, to provide agent-facing guidance for deriving an MCP Tool from a CWL `Process`.
 
@@ -30,10 +30,10 @@ cwlVersion: v1.2
 class: Workflow
 
 $namespaces:
-  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
+  mcp: https://eoap.github.io/cwl-mcp-extension#
 
 hints:
-  cwlmcp:Tool:
+  mcp:Tool:
     annotations:
       readOnlyHint: false
       destructiveHint: false

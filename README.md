@@ -4,16 +4,16 @@
 
 **This repository is a work in progress. Contributions, feedback, and discussion are welcome.**
 
-The canonical schema entrypoint is [schema/cwlmcp-extension.yml](schema/cwlmcp-extension.yml). It aggregates the two records currently defined by the extension:
+The canonical schema entrypoint is [schema/mcp-extension.yml](schema/mcp-extension.yml). It aggregates the two records currently defined by the extension:
 
-- `cwlmcp:Tool`
-- `cwlmcp:ToolAnnotations`
+- `mcp:Tool`
+- `mcp:ToolAnnotations`
 
 ## Namespace
 
 The canonical namespace URI for this extension is `https://eoap.github.io/cwl-mcp-extension#`.
 
-- `cwlmcp` is the recommended prefix.
+- `mcp` is the recommended prefix.
 - Prefixes are aliases; the namespace URI is the actual identifier.
 - The namespace is currently hosted under EOAP because EOAP maintains the extension.
 - The project intentionally does not claim an unregistered `w3id.org` namespace at this stage.
@@ -26,10 +26,10 @@ cwlVersion: v1.2
 class: Workflow
 
 $namespaces:
-  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
+  mcp: https://eoap.github.io/cwl-mcp-extension#
 
 hints:
-  cwlmcp:Tool:
+  mcp:Tool:
     annotations:
       readOnlyHint: false
       destructiveHint: false
@@ -59,7 +59,7 @@ cwl-mcp-extension/
 ├── schema/
 │   ├── mcp-tool.yml
 │   ├── mcp-tool-annotations.yml
-│   └── cwlmcp-extension.yml
+│   └── mcp-extension.yml
 ├── vocab/
 │   ├── mcp.ttl
 │   └── context.jsonld
@@ -95,7 +95,7 @@ This repository currently provides:
 ## Validation
 
 Use the repository validation helper to run `cwltool` validation and check the
-`cwlmcp:Tool` metadata shape expected by this extension:
+`mcp:Tool` metadata shape expected by this extension:
 
 ```bash
 /home/fbrito/.local/share/hatch/env/virtual/cwl-mcp-extension/jLCmTDeX/cwl-mcp-extension/bin/python \
@@ -110,4 +110,4 @@ MCP `Tool` TypeScript schema for the 2026-07-28 specification revision.
 
 ## Scope
 
-`cwlmcp:Tool` is descriptive metadata only. It does not redefine CWL process behavior and it must not be interpreted as authorization or security policy.
+`mcp:Tool` is descriptive metadata only. It does not redefine CWL process behavior and it must not be interpreted as authorization or security policy.

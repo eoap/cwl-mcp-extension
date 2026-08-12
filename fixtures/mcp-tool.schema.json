@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://eoap.github.io/cwl-mcp-extension/schema/mcp-tool.schema.json",
-  "title": "cwlmcp:Tool",
+  "title": "mcp:Tool",
   "description": "JSON Schema fixture mirroring the proposed CWL MCP extension records.",
   "type": "object",
   "additionalProperties": false,

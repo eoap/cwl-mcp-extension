@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: Workflow
 
 $namespaces:
-  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
+  mcp: https://eoap.github.io/cwl-mcp-extension#
 
 id: buffer
 label: Buffer
@@ -14,7 +14,7 @@ doc: |
   geometry.
 
 hints:
-  cwlmcp:Tool:
+  mcp:Tool:
     name: buffer_geometry
     aliases:
       - buffer a geometry

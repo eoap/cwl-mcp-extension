@@ -6,7 +6,7 @@ The extension should remain intentionally small and should only model metadata t
 
 ## Clear Precedence
 
-Explicit `cwlmcp:Tool` values override derived values, but only for MCP-facing presentation and discovery behavior.
+Explicit `mcp:Tool` values override derived values, but only for MCP-facing presentation and discovery behavior.
 
 ## No Semantic Duplication
 

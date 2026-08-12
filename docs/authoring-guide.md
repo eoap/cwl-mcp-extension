@@ -2,14 +2,14 @@
 
 ## Minimal Pattern
 
-Attach `cwlmcp:Tool` metadata under `hints`:
+Attach `mcp:Tool` metadata under `hints`:
 
 ```yaml
 $namespaces:
-  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
+  mcp: https://eoap.github.io/cwl-mcp-extension#
 
 hints:
-  cwlmcp:Tool:
+  mcp:Tool:
     annotations:
       readOnlyHint: true
 ```
@@ -20,16 +20,16 @@ hints:
 - Reuse CWL `label` and `doc` unless you need MCP-specific presentation text.
 - Keep `useWhen` and `doNotUseWhen` concise and action-oriented.
 - Treat `aliases` as discovery aids, not as alternate identifiers.
-- Avoid restating CWL `inputs` or `outputs` inside `cwlmcp:Tool`.
+- Avoid restating CWL `inputs` or `outputs` inside `mcp:Tool`.
 
 ## Example
 
 ```yaml
 $namespaces:
-  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
+  mcp: https://eoap.github.io/cwl-mcp-extension#
 
 hints:
-  cwlmcp:Tool:
+  mcp:Tool:
     name: buffer_geometry
     aliases:
       - buffer a geometry

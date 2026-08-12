@@ -2,12 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 
 $namespaces:
-  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
+  mcp: https://eoap.github.io/cwl-mcp-extension#
 
 id: invalid_tool
 
 hints:
-  cwlmcp:Tool:
+  mcp:Tool:
     inputs:
       region:
         type: string

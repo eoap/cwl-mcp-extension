@@ -1,18 +1,18 @@
 {
   "@context": {
-    "cwlmcp": "https://eoap.github.io/cwl-mcp-extension#",
-    "Tool": "cwlmcp:Tool",
-    "ToolAnnotations": "cwlmcp:ToolAnnotations",
-    "name": "cwlmcp:name",
-    "title": "cwlmcp:title",
-    "description": "cwlmcp:description",
-    "aliases": "cwlmcp:aliases",
-    "useWhen": "cwlmcp:useWhen",
-    "doNotUseWhen": "cwlmcp:doNotUseWhen",
-    "annotations": "cwlmcp:annotations",
-    "readOnlyHint": "cwlmcp:readOnlyHint",
-    "destructiveHint": "cwlmcp:destructiveHint",
-    "idempotentHint": "cwlmcp:idempotentHint",
-    "openWorldHint": "cwlmcp:openWorldHint"
+    "mcp": "https://eoap.github.io/cwl-mcp-extension#",
+    "Tool": "mcp:Tool",
+    "ToolAnnotations": "mcp:ToolAnnotations",
+    "name": "mcp:name",
+    "title": "mcp:title",
+    "description": "mcp:description",
+    "aliases": "mcp:aliases",
+    "useWhen": "mcp:useWhen",
+    "doNotUseWhen": "mcp:doNotUseWhen",
+    "annotations": "mcp:annotations",
+    "readOnlyHint": "mcp:readOnlyHint",
+    "destructiveHint": "mcp:destructiveHint",
+    "idempotentHint": "mcp:idempotentHint",
+    "openWorldHint": "mcp:openWorldHint"
   }
 }

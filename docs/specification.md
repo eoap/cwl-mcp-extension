@@ -4,8 +4,8 @@
 
 This extension introduces two records:
 
-- `cwlmcp:Tool`
-- `cwlmcp:ToolAnnotations`
+- `mcp:Tool`
+- `mcp:ToolAnnotations`
 
 These records are intended for use in CWL metadata, typically under `hints`, to provide agent-facing guidance for deriving an MCP Tool from a CWL `Process`.
 
@@ -13,7 +13,7 @@ These records are intended for use in CWL metadata, typically under `hints`, to 
 
 The canonical namespace URI for this extension is `https://eoap.github.io/cwl-mcp-extension#`.
 
-- `cwlmcp` is the recommended prefix.
+- `mcp` is the recommended prefix.
 - Prefixes are aliases; the namespace URI is the actual identifier.
 - EOAP hosts the namespace because EOAP currently maintains this extension.
 - The project intentionally does not claim an unregistered `w3id.org` namespace at this stage.
@@ -32,15 +32,15 @@ For non-normative background on the intent and limits of MCP tool annotations, s
 
 ## Canonical Schema
 
-The canonical schema entrypoint is `schema/cwlmcp-extension.yml`.
+The canonical schema entrypoint is `schema/mcp-extension.yml`.
 
 Implementations should load that file rather than importing individual record files directly.
 
 ## Normative Constraints
 
 - Standard CWL remains authoritative for process execution and structural semantics.
-- `cwlmcp:Tool` must not duplicate CWL inputs or outputs.
-- `cwlmcp:ToolAnnotations` values are hints only.
+- `mcp:Tool` must not duplicate CWL inputs or outputs.
+- `mcp:ToolAnnotations` values are hints only.
 - `aliases` may be preserved as extension metadata but are not a standard top-level MCP Tool field.
 
 ## Recommended Derivation Rules
@@ -49,14 +49,14 @@ Implementations should load that file rather than importing individual record fi
 
 Precedence:
 
-1. `cwlmcp:Tool.name`
+1. `mcp:Tool.name`
 2. normalized CWL `id`
 
 ### Title
 
 Precedence:
 
-1. `cwlmcp:Tool.title`
+1. `mcp:Tool.title`
 2. CWL `label`
 3. normalized CWL `id`
 
@@ -64,12 +64,12 @@ Precedence:
 
 Precedence:
 
-1. `cwlmcp:Tool.description`
+1. `mcp:Tool.description`
 2. composed text from CWL `doc`, `useWhen`, and `doNotUseWhen`
 
 ### Annotations
 
-If present, `cwlmcp:Tool.annotations` should map mechanically into MCP Tool annotations without reinterpretation.
+If present, `mcp:Tool.annotations` should map mechanically into MCP Tool annotations without reinterpretation.
 
 The aligned MCP 2026-07-28 annotation fields are:
 
@@ -90,7 +90,7 @@ The MCP defaults are intentionally conservative when these hints are absent:
 
 For this repository, `cwltool` is used to validate the underlying CWL document,
 while `scripts/validate_with_mcp_schema.py` adds repository-level checks for the
-`cwlmcp:Tool` metadata structure.
+`mcp:Tool` metadata structure.
 
 This keeps standard CWL validation delegated to `cwltool` and leaves the MCP
 extension constraints explicit and easy to evolve within this repository.

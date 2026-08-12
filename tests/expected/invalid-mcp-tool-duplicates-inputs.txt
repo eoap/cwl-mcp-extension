@@ -1,1 +1,1 @@
-Invalid by repository convention: `cwlmcp:Tool` must not duplicate CWL input definitions.
+Invalid by repository convention: `mcp:Tool` must not duplicate CWL input definitions.
