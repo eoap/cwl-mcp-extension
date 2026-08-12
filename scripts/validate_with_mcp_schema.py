@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate CWL documents plus repository-level mcp:Tool conventions."""
+"""Validate CWL documents plus repository-level cwlmcp:Tool conventions."""
 
 from __future__ import annotations
 
@@ -35,7 +35,7 @@ PROCESS_CLASSES = {"Workflow", "CommandLineTool", "ExpressionTool"}
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Validate CWL files with cwltool and check mcp:Tool metadata."
+        description="Validate CWL files with cwltool and check cwlmcp:Tool metadata."
     )
     parser.add_argument(
         "paths",
@@ -92,11 +92,11 @@ def iter_processes(document: Any) -> list[dict[str, Any]]:
 
 def extract_mcp_tool(hints: Any) -> Any:
     if isinstance(hints, dict):
-        return hints.get("mcp:Tool")
+        return hints.get("cwlmcp:Tool")
     if isinstance(hints, list):
         for item in hints:
-            if isinstance(item, dict) and "mcp:Tool" in item:
-                return item["mcp:Tool"]
+            if isinstance(item, dict) and "cwlmcp:Tool" in item:
+                return item["cwlmcp:Tool"]
     return None
 
 
@@ -174,7 +174,7 @@ def validate_extension_metadata(path: Path) -> list[str]:
         mcp_tool = extract_mcp_tool(process.get("hints"))
         if mcp_tool is None:
             continue
-        prefix = f"{path} [{process_id}] mcp:Tool"
+        prefix = f"{path} [{process_id}] cwlmcp:Tool"
         errors.extend(validate_mcp_tool(mcp_tool, prefix))
     return errors
 

@@ -1,6 +1,6 @@
 # Canonical entrypoint for the CWL MCP extension schema.
 $namespaces:
-  mcp: https://w3id.org/terradue/mcp#
+  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
 
 doc: >
   Aggregate schema entrypoint for the proposed CWL MCP extension.

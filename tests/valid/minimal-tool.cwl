@@ -2,12 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 
 $namespaces:
-  mcp: https://w3id.org/terradue/mcp#
+  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
 
 id: list_catalog
 
 hints:
-  mcp:Tool:
+  cwlmcp:Tool:
     name: list_catalog
     annotations:
       readOnlyHint: true

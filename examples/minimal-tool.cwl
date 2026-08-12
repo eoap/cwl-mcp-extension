@@ -2,14 +2,14 @@ cwlVersion: v1.2
 class: CommandLineTool
 
 $namespaces:
-  mcp: https://w3id.org/terradue/mcp#
+  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
 
 id: echo-region
 label: Echo region identifier
 doc: Returns the region identifier provided by the caller.
 
 hints:
-  mcp:Tool:
+  cwlmcp:Tool:
     annotations:
       readOnlyHint: true
       destructiveHint: false

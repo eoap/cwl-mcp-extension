@@ -2,12 +2,12 @@ cwlVersion: v1.2
 class: CommandLineTool
 
 $namespaces:
-  mcp: https://w3id.org/terradue/mcp#
+  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
 
 id: invalid_tool
 
 hints:
-  mcp:Tool:
+  cwlmcp:Tool:
     inputs:
       region:
         type: string

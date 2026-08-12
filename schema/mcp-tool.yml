@@ -1,8 +1,8 @@
 # Schema Salad record for MCP tool metadata attached to a CWL process.
 $namespaces:
-  mcp: https://w3id.org/terradue/mcp#
+  cwlmcp: https://eoap.github.io/cwl-mcp-extension#
 
-name: mcp:Tool
+name: cwlmcp:Tool
 type: record
 doc: >
   Agent-facing metadata used to derive an MCP Tool from a CWL Process.
@@ -49,5 +49,5 @@ fields:
   - name: annotations
     type:
       - "null"
-      - mcp:ToolAnnotations
+      - cwlmcp:ToolAnnotations
     doc: Optional MCP tool annotation hints copied into the derived MCP Tool.
