@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://eoap.github.io/cwl-mcp-extension/crosswalk-cwl-mcp/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Crosswalk - cwl-mcp-extension</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Crosswalk";
+        var mkdocs_page_input_path = "crosswalk-cwl-mcp.md";
+        var mkdocs_page_url = "/cwl-mcp-extension/crosswalk-cwl-mcp/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> cwl-mcp-extension
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../specification/">Overview</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Crosswalk</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../authoring-guide/">Authoring Guide</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../design-principles/">Design Principles</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">cwl-mcp-extension</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Crosswalk</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/eoap/cwl-mcp-extension/edit/main/docs/crosswalk-cwl-mcp.md">Edit on eoap/cwl-mcp-extension</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cwl-to-mcp-crosswalk">CWL to MCP Crosswalk</h1>
+<table>
+<thead>
+<tr>
+<th>CWL source</th>
+<th>Extension role</th>
+<th>MCP target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>default tool identity</td>
+<td><code>name</code></td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>default presentation title</td>
+<td><code>title</code></td>
+</tr>
+<tr>
+<td><code>doc</code></td>
+<td>base descriptive text</td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td><code>inputs</code></td>
+<td>authoritative input model</td>
+<td><code>inputSchema</code></td>
+</tr>
+<tr>
+<td><code>outputs</code></td>
+<td>authoritative output model</td>
+<td><code>outputSchema</code></td>
+</tr>
+<tr>
+<td><code>mcp:Tool.name</code></td>
+<td>explicit override</td>
+<td><code>name</code></td>
+</tr>
+<tr>
+<td><code>mcp:Tool.title</code></td>
+<td>explicit override</td>
+<td><code>title</code></td>
+</tr>
+<tr>
+<td><code>mcp:Tool.description</code></td>
+<td>explicit override</td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td><code>mcp:Tool.useWhen</code></td>
+<td>usage guidance</td>
+<td>composed into <code>description</code> or metadata</td>
+</tr>
+<tr>
+<td><code>mcp:Tool.doNotUseWhen</code></td>
+<td>avoidance guidance</td>
+<td>composed into <code>description</code> or metadata</td>
+</tr>
+<tr>
+<td><code>mcp:Tool.aliases</code></td>
+<td>discovery metadata</td>
+<td><code>_meta</code> or generator-only data</td>
+</tr>
+<tr>
+<td><code>mcp:Tool.annotations.title</code></td>
+<td>display fallback hint</td>
+<td><code>annotations.title</code></td>
+</tr>
+<tr>
+<td><code>mcp:Tool.annotations.*</code></td>
+<td>direct hint mapping</td>
+<td><code>annotations.*</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>The extension is additive, not substitutive.</li>
+<li>CWL remains the source of truth for input/output typing.</li>
+<li>MCP display precedence is <code>title</code>, then <code>annotations.title</code>, then <code>name</code>.</li>
+<li>Generators may keep richer provenance metadata than is emitted into the MCP Tool object.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../specification/" class="btn btn-neutral float-left" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../authoring-guide/" class="btn btn-neutral float-right" title="Authoring Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/eoap/cwl-mcp-extension" class="fa fa-code-fork" style="color: #fcfcfc"> eoap/cwl-mcp-extension</a>
+        </span>
+    
+    
+      <span><a href="../specification/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../authoring-guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
